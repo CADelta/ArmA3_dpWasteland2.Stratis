@@ -2,23 +2,53 @@ class Header
 {
 	gameType = Sandbox;
 	minPlayers = 1;
-	maxPlayers = 80;		//CAD - This was 132
+	maxPlayers = 132;
+};
+
+//Dialog includes
+#include "client\gui\common.hpp"
+
+#include "client\gui\playerMenu\dialog\playerMenu.hpp"
+#include "client\gui\playerMenu\dialog\respawn_dialog.hpp"
+#include "client\gui\playerMenu\dialog\teamkill_dialog.hpp"
+
+#include "client\gui\playerMenu\dialog\lootPlayerMenu.hpp"
+
+#include "client\gui\adminPanel\dialog\dpModMenu.hpp"
+#include "client\gui\adminPanel\dialog\serverCADminMenu.hpp"
+#include "client\gui\adminPanel\dialog\playerManagement.hpp"
+#include "client\gui\adminPanel\dialog\vehicleManagement.hpp"
+
+#include "client\gui\groups\dialog\groupManagement.hpp"
+#include "client\gui\gunStore\dialog\gunshop_settings.hpp"
+#include "client\gui\generalStore\dialog\genstore_settings.hpp"
+#include "client\gui\constructionStore\dialog\constructionstore_settings.hpp"
+
+#include "addons\R3F_ARTY_AND_LOG\desc_include.h"
+
+class RscTitles
+{
+	#include "client\gui\hud\dialog\hud.hpp"
+	#include "client\gui\playerMenu\dialog\welcome.hpp"
 };
 
 OnLoadName = "dp Wasteland v2.5.5";
-author = "=(dp)= Server (AimZ & Krycek)";
+author = "CADelta";
 loadScreen = "Loading.jpg";
 OnLoadMission = "Wasteland is a harsh survival sandbox where 2 teams and independent players fight for survival";
 
 respawn = 3;
 respawnDelay = 15;
 //respawnVehicleDelay = 60;
+corpseRemovalMinTime = 600;	// seconds
+wreckRemovalMinTime = 600; 	// seconds
+
 //respawnDialog = 0;
 //respawnTemplates[] = {Counter};
 //respawnOnStart = 0;
 aiKills = 1;
-
-disabledAI=1;
+disabledAI = 1;
+joinUnassigned = 0; 	// 0 = Auto-assigns
 disableChannels[]={2};
 enableItemsDropping = 0;
 scriptedPlayer = 1;
@@ -45,31 +75,4 @@ class CfgSounds
 		sound[] = {"fx\beep-10.wav", 1, 1};
 		titles[] = {};
 	};
-};
-
-//Dialog includes
-#include "client\gui\common.hpp"
-
-#include "client\gui\playerMenu\dialog\playerMenu.hpp"
-#include "client\gui\playerMenu\dialog\respawn_dialog.hpp"
-#include "client\gui\playerMenu\dialog\teamkill_dialog.hpp"
-
-#include "client\gui\playerMenu\dialog\lootPlayerMenu.hpp"
-
-#include "client\gui\adminPanel\dialog\dpModMenu.hpp"	
-#include "client\gui\adminPanel\dialog\serverCADminMenu.hpp"	
-#include "client\gui\adminPanel\dialog\playerManagement.hpp"
-#include "client\gui\adminPanel\dialog\vehicleManagement.hpp" 
-
-#include "client\gui\groups\dialog\groupManagement.hpp"
-#include "client\gui\gunStore\dialog\gunshop_settings.hpp" 
-#include "client\gui\generalStore\dialog\genstore_settings.hpp"
-#include "client\gui\constructionStore\dialog\constructionstore_settings.hpp"
-
-#include "addons\R3F_ARTY_AND_LOG\desc_include.h"
-
-class RscTitles 
-{
-	#include "client\gui\hud\dialog\hud.hpp"
-	#include "client\gui\playerMenu\dialog\welcome.hpp"
 };

@@ -5,7 +5,7 @@
 //  "file Edited: 13/11/2013
 //	@file Args:
 
-if (isServer) exitWith {}; 
+if (isServer) exitWith {};
 
 diag_log format["*** playerSetup Started ***"];
 
@@ -41,33 +41,7 @@ removeVest player;
 removeBackpack player;
 removeHeadgear player;
 removeGoggles player;
-
 removeAllAssignedItems player;
-
-/*switch (playerSide) do
-{
-	case west: {
-		player addUniform "U_B_CTRG_1";
-		player addHeadgear "H_HelmetB_light_sand";
-		player addVest "V_PlateCarrierL_CTRG";
-		player addItem "B_UavTerminal";
-		player assignItem "B_UavTerminal";
-	};
-	case east: {
-		player addUniform "U_O_CombatUniform_oucamo";
-		player addHeadgear "H_HelmetSpecO_blk";
-		player addVest "V_TacVestIR_blk";
-		player addItem "O_UavTerminal";
-		player assignItem "O_UavTerminal";
-	};
-	case resistance: {
-		player addUniform "U_IG_leader";
-		player addHeadgear "H_Shemag_olive";
-		player addVest "V_PlateCarrierIA1_dgtl";
-		player addItem "I_UavTerminal";
-		player assignItem "I_UavTerminal";
-	};
-};*/
 
 switch (playerSide) do
 {
@@ -112,6 +86,7 @@ player addMagazine "16Rnd_9x21_Mag";
 player addMagazine "16Rnd_9x21_Mag";
 player addWeapon "hgun_P07_F";
 player selectWeapon "hgun_P07_F";
+
 player switchMove "aidlpercmstpsraswrfldnon_idlesteady01n";
 player playMove "aidlpercmstpsraswrfldnon_idlesteady01n";
 

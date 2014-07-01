@@ -1,5 +1,5 @@
 //	Name: init.sqf
-//	Author: AimZ =(dp)=
+//	Author: AimZ =(dp)=, [CAD] Krycek
 
 if(isServer) exitWith {};
 
@@ -18,7 +18,7 @@ diag_log format["****** clientInit Started ******"];
 
 "refuelVehicle" addPublicVariableEventHandler {
 	_data = _this select 1;_currVehicle = _data select 0;_fuelAmount = _data select 1;
-	if (_currVehicle != "") then 
+	if (_currVehicle != "") then
 	{
 		_obj = objectFromNetId _currVehicle;
 		if (_obj != objNull) then
@@ -26,7 +26,7 @@ diag_log format["****** clientInit Started ******"];
 			if (local _obj) then
 			{
 				_fuel = ((fuel _obj) + _fuelAmount);
-				if (_fuel > 1) then 
+				if (_fuel > 1) then
 				{
 					_fuel = 1;
 				};
@@ -41,17 +41,17 @@ diag_log format["****** clientInit Started ******"];
 	_data = _this select 1;
 	_currVehicle = _data select 0;
 	_fuelAmount = _data select 1;
-	if (_currVehicle != "") then 
+	if (_currVehicle != "") then
 	{
 		_obj = objectFromNetId _currVehicle;
 		if (_obj != objNull) then
 		{
 			if (local _obj) then
 			{
-				_fuel = ((fuel _obj) - _fuelAmount);	
+				_fuel = ((fuel _obj) - _fuelAmount);
 				if (_fuel < 0) then {_fuel = 0;};
 				_obj setFuel _fuel;
-				
+
 				defuelVehicle = ["",0];
 				publicVariable "defuelVehicle";
 			};
@@ -70,7 +70,7 @@ waitUntil {!visibleMap};
 sleep 2;
 
 // One time only setup
-[] call initPlayer;	
+[] call initPlayer;
 
 // Update map markers
 [] call createTownMarkers;
@@ -90,10 +90,10 @@ sleep 2;
 
 // Player setup
 //sleep 2;
-[] call PlayerSetup;	
-[] spawn createMenuActions;	
-[] spawn initSurvival; 
-[] call createKeyboardEvent; 
+[] call PlayerSetup;
+[] spawn createMenuActions;
+[] spawn initSurvival;
+[] call createKeyboardEvent;
 
 // Start HUD drawing
 [] spawn rechargeScanner;
@@ -114,7 +114,7 @@ player addEventHandler ["AnimStateChanged","
 	_str_run1 = toArray 'amovpercmrun';
 	_str_run2 = toArray 'amovpknlmrun';
 	_str_anim = toArray (_this select 1);
-	if (count _str_anim < 12) then 
+	if (count _str_anim < 12) then
 	{
 		_str_anim = 'amovpercxxxx';
 	};
@@ -147,22 +147,22 @@ player addEventHandler ["AnimStateChanged","
 		};
 	} foreach _str_sprint2;
 	isStandRunning = _isStandRunning;
-	isKneelRunning = _isKneelRunning;	
+	isKneelRunning = _isKneelRunning;
 	isStandSprinting = _isStandSprinting;
 	isKneelSprinting = _isKneelSprinting;
 "];
 
 player enableFatigue true;
 finalFatigue = 0; // damage: 0=good, 1=bad | thirst=100:good, 0=bad
-[] spawn 
+[] spawn
 {
 	while {true} do
 	{
 		_thirst = ((((player getVariable ["thirst",0]) / 100) * -1) + 1) / 1.5;
 		_hunger = ((((player getVariable ["hunger",0]) / 100) * -1) + 1) / 1.5;
 		_damage = (damage player) / 2;
-		_minfatigue = ((_thirst max _hunger) max (_damage));  
-		
+		_minfatigue = ((_thirst max _hunger) max (_damage));
+
 		if ((isStandSprinting || isKneelSprinting || isStandRunning || isKneelRunning) && (vehicle player == player)) then
 		{
 			if (finalFatigue < 1) then {
@@ -174,19 +174,19 @@ finalFatigue = 0; // damage: 0=good, 1=bad | thirst=100:good, 0=bad
 				{
 					finalFatigue = finalFatigue + 0.01;
 				};
-			} 
-			else 
+			}
+			else
 			{
 				finalFatigue = 1;
 			};
 		}
 		else
 		{
-			if (finalFatigue > _minfatigue) then 
+			if (finalFatigue > _minfatigue) then
 			{
 				finalFatigue = finalFatigue - 0.1;
-			} 
-			else 
+			}
+			else
 			{
 				finalFatigue = _minfatigue;
 			};
