@@ -1,7 +1,7 @@
 ArmA3-dpWasteland2.Stratis
 ===========================
 
-ArmA3 - **dp Wasteland 2** - current build: **255**
+ArmA3 - **dp Wasteland 2** - current build: **260**
 
 Made by **CADelta**
 
