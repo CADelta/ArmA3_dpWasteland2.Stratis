@@ -104,6 +104,8 @@ player createDiaryRecord["changelog",
 
 player createDiaryRecord["changelog",
 ["[CAD]","
+<br/>2.6<br/>
+		[Fixed] Various fixes and features improvements from dp Wasteland 3.<br/>
 <br/>2.5.5<br/>
 		[Fixed] MX SW and MXM had switched names in the Gun Store.<br/>
 		[Fixed] Briefing on the map screen got duplicated again and again after respawning.<br/>

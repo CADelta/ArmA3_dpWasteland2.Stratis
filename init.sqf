@@ -2,7 +2,7 @@
 //	Author: AimZ =(dp)=, [CAD] Krycek
 
 diag_log format["******** MISSION init Started ********"];
-versionName = "v2.5.5";
+versionName = "v2.6";
 modVersion = "build-2sgrd95";
 vChecksum = 1;
 {vChecksum = vChecksum + _x;} forEach (toArray modVersion);

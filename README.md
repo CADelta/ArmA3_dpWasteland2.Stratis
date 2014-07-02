@@ -8,6 +8,9 @@ Made by **CADelta**
 Changelog
 =====================================
 
+**2.6**
+* **[Fixed]** Various fixes and features improvements from dp Wasteland 3.
+
 **2.5.5**
 * **[Fixed]** MX SW and MXM had switched names in the Gun Store.
 * **[Fixed]** Briefing on the map screen got duplicated again and again after respawning.

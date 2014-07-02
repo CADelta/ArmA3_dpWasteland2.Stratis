@@ -70,7 +70,7 @@ class WastelandHud {
 			colorBackground[] = {0,0,0,0};
 			colorText[] = {1,1,1,1};
 			shadow = 2;
-			text = "<t color='#91aa87' shadow='2' size='1.0'>dp Wasteland 2.5 - dp-clan.enjin.com</t>";
+			text = "<t color='#91aa87' shadow='2' size='1.0'>dp Wasteland 2.6 - dp-clan.enjin.com</t>";
 			class Attributes
 			{
 				align = "right";
