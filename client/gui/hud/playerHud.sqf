@@ -1,9 +1,6 @@
 
-//	@file Version: 1.0
 //	@file Name: playerHud.sqf
-//	@file Author: [404] Deadbeat
-//	@file Created: 11/09/2012 04:23
-//	@file Args:
+//	@file Author: [404] Deadbeat, [CAD] Krycek
 
 disableSerialization;
 private["_ui","_vitals","_hudVehicle","_decimalPlaces","_health","_tempString","_yOffset","_vehicle","_x","_y"];
@@ -54,16 +51,21 @@ while {true} do
 		_vehicle = assignedVehicle player;
 
 		{
-			if((driver _vehicle == _x) || (gunner _vehicle == _x)) then
+			if((driver _vehicle == _x) || (gunner _vehicle == _x) || (commander _vehicle == _x)) then
 			{
 				if(driver _vehicle == _x) then
 				{
 					_tempString = format ["%1 %2 <img size='1.0' image='client\ui\icons\driver.paa'/><br/>",_tempString, (name _x)];
 					_yOffset = _yOffset + 0.04;
-				}
-				else
+				};
+				if(gunner _vehicle == _x) then
 				{
 					_tempString = format ["%1 %2 <img size='1.0' image='client\ui\icons\gunner.paa'/><br/>",_tempString, (name _x)];
+					_yOffset = _yOffset + 0.04;
+				};
+				if(commander _vehicle == _x) then
+				{
+					_tempString = format ["%1 %2 <img size='1.0' image='client\ui\icons\commander.paa'/><br/>",_tempString, (name _x)];
 					_yOffset = _yOffset + 0.04;
 				}; 
 			}

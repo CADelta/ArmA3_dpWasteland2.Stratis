@@ -1,3 +1,4 @@
+// @ file Name: getDebugData.sqf
 
 // collect all debug info to draw...
 while {true} do

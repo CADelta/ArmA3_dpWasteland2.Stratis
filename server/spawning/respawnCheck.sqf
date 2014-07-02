@@ -45,8 +45,8 @@ while {true} do
 					};
 
 					// check for badly broken
-					//if (_damage > 0.90) then					// AimZ corrected it to this. Gonna stick to the other if statement for now.
-					if ((_damage > 0.99 and _alive == 0) or !alive _unit) then
+					// if ((_damage > 0.96 && _alive == 0) || !alive _unit) then	// = Original.
+					if (_damage > 0.96) then
 					{
 						_unit setDamage 1;
 						_unit setVariable ["status", "burn", true];
@@ -153,7 +153,7 @@ while {true} do
 		};
 	} foreach vehicles;
 
-	sleep 1;
+	sleep 2;
 };
 
 diag_log format["****** repawnCheck Finished ******"];

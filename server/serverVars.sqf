@@ -90,6 +90,8 @@ AttackHelicopters = [
 	"I_Heli_light_03_F"				// WY-55 - Hellcat
 ];
 ArmedFighterPlanes = [
+    "B_Plane_CAS_01_F",             	// A-164 Wipeout CAS
+    "O_Plane_CAS_02_F",             	// To-199 Neophron CAS
     //"I_Plane_Fighter_03_AA_F",	// A-143 Buzzard AA
     "I_Plane_Fighter_03_CAS_F"		// A-143 Buzzard CAS
 ];
@@ -111,31 +113,38 @@ Cars = [
     "C_Hatchback_01_sport_F"
 ];
 Trucks = [
-    "B_Truck_01_transport_F",
-    "B_Truck_01_covered_F",
-    "B_Truck_01_mover_F",
-    "B_Truck_01_medical_F",
-    "B_Truck_01_box_F",
-    "B_Truck_01_Repair_F",
+    "C_Van_01_box_F",
+    //"C_Van_01_fuel_F",
+    "C_Van_01_transport_F",
+    //"B_G_Van_01_fuel_F",
+    //"B_G_Van_01_transport_F",
     //"B_Truck_01_ammo_F",
+    "B_Truck_01_box_F",
+    "B_Truck_01_covered_F",
     "B_Truck_01_fuel_F",
-    "O_Truck_02_covered_F",
-    "O_Truck_02_transport_F",
-    "O_Truck_02_medical_F",
-    "O_Truck_02_box_F",
+    "B_Truck_01_medical_F",
+    "B_Truck_01_mover_F",
+    "B_Truck_01_Repair_F",
+    "B_Truck_01_transport_F",
     //"O_Truck_02_Ammo_F",
+    "O_Truck_02_box_F",
+    "O_Truck_02_covered_F",
     "O_Truck_02_fuel_F",
-    "I_Truck_02_covered_F",
-    "I_Truck_02_transport_F",
-    "I_Truck_02_medical_F",	
+    "O_Truck_02_medical_F",
+    "O_Truck_02_transport_F",
+    //"O_Truck_03_Ammo_F",          // Tempest
+    "O_Truck_03_covered_F",         // Tempest
+    "O_Truck_03_device_F",          // Tempest
+    "O_Truck_03_fuel_F",            // Tempest
+    "O_Truck_03_medical_F",         // Tempest
+    "O_Truck_03_repair_F",          // Tempest
+    "O_Truck_03_transport_F",       // Tempest
     //"I_Truck_02_ammo_F",
     "I_Truck_02_box_F",
+    "I_Truck_02_covered_F",
     //"I_Truck_02_fuel_F",
-    "C_Van_01_transport_F",
-    "C_Van_01_box_F"
-    //"C_Van_01_fuel_F",
-    //"B_G_Van_01_transport_F",
-    //"B_G_Van_01_fuel_F"
+    "I_Truck_02_medical_F",
+    "I_Truck_02_transport_F"
 ];
 UnarmedMRAPVehicles = [
 	"B_MRAP_01_F", 
@@ -165,7 +174,7 @@ MainBattleTanks = [
     "B_MBT_01_cannon_F",
     //"B_MBT_01_arty_F",
     //"B_MBT_01_mlrs_F",
-    //"O_MBT_02_arty_F"
+    //"O_MBT_02_arty_F",
     "O_MBT_02_cannon_F",
 	"I_MBT_03_cannon_F"
 ];
@@ -189,28 +198,7 @@ UnmannedGroundVehicles = [
     "B_UGV_01_rcws_F",
     "O_UGV_01_rcws_F",
     "I_UGV_01_rcws_F"
-];*/
 
-//Object List - Random Spawns.
-/*baseObjectList = [
-	"Land_Pipes_small_F",
-	"Land_Pipes_large_F",
-	"Land_IronPipes_F",
-	"Land_BagFence_Corner_F",
-	"Land_BagFence_End_F",
-	"Land_BagFence_Long_F",
-	"Land_BagFence_Round_F",
-	"Land_BagFence_Short_F",
-	"Land_BagBunker_Small_F",
-	"Land_CncBarrier_F",
-	"Land_CncBarrierMedium_F",
-	"Land_CncBarrierMedium4_F",
-	"Land_CncWall1_F",
-	"Land_CncWall4_F",
-	"Land_HBarrier_3_F",
-	"Land_HBarrier_5_F",
-	"Land_HBarrierBig_F",
-	"Land_HBarrier_1_F"
 ];*/
 
 survivalObjectList = [
@@ -285,11 +273,11 @@ removeWeapons = [
     //"arifle_MX_GL_F",
     //"arifle_MX_SW_F",
     //"arifle_MXM_F",
-	/*"arifle_MXC_Black_F",
-	"arifle_MX_Black_F",
-	"arifle_MX_GL_Black_F",
-	"arifle_MX_SW_Black_F",
-	"arifle_MXM_Black_F",*/
+	//"arifle_MXC_Black_F",
+	//"arifle_MX_Black_F",
+	//"arifle_MX_GL_Black_F",
+	//"arifle_MX_SW_Black_F",
+	//"arifle_MXM_Black_F",
     "arifle_MX_pointer_F",
     "arifle_MX_Holo_pointer_F",
     "arifle_MX_Hamr_pointer_F",
@@ -397,51 +385,38 @@ vehicleAddition = [
     //"Laserdesignator_mounted"
 ];
 
-/*vehicleAddition2 = [
+vehicleAddition2 = [
 	"Chemlight_blue",
 	"Chemlight_red",
 	"Chemlight_green",
 	"Chemlight_yellow"
-];*/
+];
 
 vehicleAddition3 = [
+    //"NVGoggles",
+    //"NVGoggles_OPFOR",
+    //"NVGoggles_INDEP",
+    //"Laserdesignator",
     "Medikit",
     "FirstAidKit",
     "ToolKit",
     "MineDetector",
     "Rangefinder",
     "Binocular"
-    //"NVGoggles",
-    //"NVGoggles_OPFOR",
-    //"NVGoggles_INDEP",
-    //"Laserdesignator"
 ];
  
 ammoBoxes = [
-	//"Box_NATO_AmmoVeh_F",
-	//"Box_NATO_Grenades_F",	// too many grenade spamming happening, these only hold nades and smoke
-	//"Box_NATO_WpsLaunch_F",	// too many launchers in game, need to give the helis a chance
+    "Box_NATO_Wps_F",
+    "Box_East_Wps_F",
+	//"Box_IND_Wps_F",			// issue: LODShape::AddLoadHandler: Handler not present in shape [a3\weapons_f\empty.p3d]
 	"Box_NATO_Ammo_F",
-	"Box_NATO_Wps_F",
-	//"Box_NATO_AmmoOrd_F",
-	//"Box_NATO_WpsSpecial_F",
+    "Box_East_Ammo_F",
+    "Box_IND_Ammo_F",
 	"Box_NATO_Support_F",
-	//"Box_East_AmmoVeh_F", 
-	//"Box_East_Grenades_F",	// too many grenade spamming happening, these only hold nades and smoke
-	//"Box_East_WpsLaunch_F",	// too many launchers in game, need to give the helis a chance
-	"Box_East_Ammo_F",
-	"Box_East_Wps_F",
-	//"Box_East_AmmoOrd_F",
-	//"Box_East_WpsSpecial_F",
 	"Box_East_Support_F",
-	//"Box_IND_AmmoVeh_F",
-	//"Box_IND_Grenades_F",		// too many grenade spamming happening, these only hold nades and smoke
-	//"Box_IND_WpsLaunch_F",	// too many launchers in game, need to give the helis a chance
-	"Box_IND_Ammo_F",
-	"Box_IND_Wps_F",			// issue: LODShape::AddLoadHandler: Handler not present in shape [a3\weapons_f\empty.p3d]
-	//"Box_IND_AmmoOrd_F",
-	//"Box_IND_WpsSpecial_F",
 	"Box_IND_Support_F"
+    //"Box_East_AmmoOrd_F",
+    //"Box_IND_AmmoOrd_F"
 ];
 
 missionAmmoBoxes = [

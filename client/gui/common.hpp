@@ -110,7 +110,7 @@ class w_RscStructuredText
 	h = 0.035;
 	w = 0.1;
 	text = "";
-	size = 0.03921;
+	size = 0.032;
 	shadow = 2;
 };
 
@@ -177,7 +177,7 @@ class w_RscListBox
     autoScrollDelay = 5;
     autoScrollRewind = 0;
 
-    class ScrollBar
+    class ListScrollBar
     {
 		color[] = {1, 1, 1, 1};
         colorActive[] = {1, 1, 1, 1};
@@ -219,7 +219,7 @@ class w_Rsclist
         autoScrollDelay = 5;
         autoScrollRewind = 0;
 
-        class ScrollBar
+        class ListScrollBar
         {
                 color[] = {1, 1, 1, 1};
                 colorActive[] = {1, 1, 1, 1};
@@ -244,8 +244,10 @@ class w_RscPicture
 	colorBackground[] = {};
 	colorText[] = {};
 	
-	x = 0.0; y = 0.2;
-	w = 0.2; h = 0.2;
+	x = 0.0;
+	y = 0.2;
+	w = 0.2;
+	h = 0.2;
 	
 	text = "";
 	
@@ -265,6 +267,8 @@ class w_RscButtonBase {
 	colorBackground[] = {1, 1, 1, 1};
 	colorbackground2[] = {1, 1, 1, 0.4};
 	colorDisabled[] = {1, 1, 1, 0.25};
+	colorFocused[] = { 1, 1, 1, 1 }; 			// added to fix the "No entry - colorFocused".
+	colorBackgroundFocused[] = { 1, 1, 1, 0.4 };	// source: http://forums.bistudio.com/showthread.php?172008-Error-dialog-menu-since-new-version&p=2606221
 	
 	periodFocus = 1.2;
 	periodOver = 0.8;
@@ -290,7 +294,7 @@ class w_RscButtonBase {
 	class TextPos {
 	
 		left = 0.05;
-		top = 0.025;
+		top = 0.005;
 		right = 0.005;
 		bottom = 0.025;
 		
@@ -369,7 +373,7 @@ class w_RscButton : w_RscButtonBase {
 	class TextPos {
 	
 		left = 0.002;
-		top = 0.014;
+		top = 0.005;
 		right = 0.002;
 		bottom = 0.005;
 	};
@@ -458,7 +462,7 @@ class w_RscCombo {
 	arrowEmpty = "client\ui\ui_arrow_top_ca.paa";
 	border = "client\ui\ui_border_scroll_ca.paa";
 
-		class ScrollBar
+		class ComboScrollbar
 		{
 			color[] = {1, 1, 1, 1};
 			colorActive[] = {1, 1, 1, 1};

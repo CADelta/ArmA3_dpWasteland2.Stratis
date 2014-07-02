@@ -30,7 +30,6 @@ if(!isDedicated) then {
 	"THISIS437SPARTA" addPublicVariableEventHandler { [] spawn (_this select 1); };
     dat4ClientStarted = player;
     publicVariableServer "dat4ClientStarted";
-
 };
 
 //init 3rd Party Scripts

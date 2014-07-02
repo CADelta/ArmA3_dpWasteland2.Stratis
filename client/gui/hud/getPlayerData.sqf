@@ -67,7 +67,7 @@ while {true} do
 			};	
 		};
 		sleep 0.1;
-	//} forEach allUnits;
+//  } forEach allUnits;			// Also show AIs
 	} forEach playableUnits;
 	
 	iconArray = + _iconArray;

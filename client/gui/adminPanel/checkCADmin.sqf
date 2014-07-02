@@ -1,8 +1,5 @@
-//	@file Version: 1.0
 //	@file Name: checkCADmin.sqf
 //	@file Author: [404] Deadbeat, [CAD] Krycek
-//	@file Created: 20/11/2012 05:19
-//	@file Args:
 
 private ["_uid","_handle"];
 
@@ -12,12 +9,12 @@ if ((_uid in dpModerators) || (_uid in serverCADministrators)) then
     if ((_uid in dpModerators)) then
 	{
 		execVM "client\gui\adminPanel\loaddpModeratorMenu.sqf";
-        hint "Welcome dp Moderator";
+	//hint "Welcome dp Moderator";
 	};
     if ((_uid in serverCADministrators)) then
 	{
 		execVM "client\gui\adminPanel\loadServerCADministratorMenu.sqf";
-        hint "Welcome CADministrator";
+        //hint "Welcome CADministrator";
 	};
 }
 else

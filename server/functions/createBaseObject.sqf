@@ -1,3 +1,6 @@
+// @ file Name: createBaseObject.sqf
+// @ file Author: [CAD] Krycek
+// @ file Usage: constructionStore\buyItem.sqf
 
 private ["_class","_position"];
 
@@ -23,6 +26,8 @@ if (_object isKindOf "ReammoBox_F") then
 	
 	// remove all items
 	clearItemCargoGlobal _object;
+	// remove all backpacks
+	clearBackpackCargoGlobal _object;
 };
 
 

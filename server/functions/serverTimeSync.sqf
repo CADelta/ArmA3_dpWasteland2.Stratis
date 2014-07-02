@@ -1,7 +1,6 @@
-//	@file Version: 1.1
 //	@file Name: serverTimeSync.sqf
-//	@file Author: [404] Deadbeat, AimZ =(dp)=
-//	@file Created: 20/11/2012 05:19
+//	@file Author: [CAD] Krycek
+//  @file Usage: clientInit.sqf (PVEH)
 
 if(!isDedicated) exitWith {};
 

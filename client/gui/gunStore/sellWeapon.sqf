@@ -1,9 +1,6 @@
 
-//	@file Version: 1.0
 //	@file Name: sellWeapon.sqf
-//	@file Author: [404] Deadbeat, [404] Costlyy, AimZ =(dp)=
-//	@file Created: 20/11/2012 05:13
-//	@file Args:
+//	@file Author: [404] Deadbeat, [404] Costlyy, AimZ =(dp)=, [CAD] Krycek
 
 //Initialize Values
 private["_primary","_magazine","_weapon_value","_magSell"];

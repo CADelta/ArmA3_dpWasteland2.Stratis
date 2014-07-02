@@ -1,8 +1,5 @@
 //@file Author: [404] Costlyy (Original concept by Sa-Matra)
-//@file Version: 1.0
-//@file Date:	21/11/2012	
 //@file Description: Shows the team killer a message to warn them about their team kill.
-//@file Args: []
 //@file Notes: Everyone is free to use / redistribute / modify this file. 
 
 

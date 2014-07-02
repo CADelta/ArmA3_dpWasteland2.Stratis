@@ -1,11 +1,8 @@
 
-//	@file Version: 1.0
 //	@file Name: refuelFuelCan.sqf
-//	@file Author: [404] Deadbeat, Aimz =(dp)=
-//	@file Created: 23/11/2012 13:51
-//	@file Args:
+//	@file Author: [404] Deadbeat, Aimz =(dp)=, [CAD] Krycek
 
-/*** THIS VERSION MAKES THE JERRY CAN DISAPPEAR WHEN REFILLING IT AT A GAS PUMP ***
+/*** BELIEVE THIS VERSION MAKES THE JERRY CAN DISAPPEAR WHEN REFILLING IT AT A GAS PUMP ***
 private ["_fuelEmpty","_fuelFull"];
 
 _fuelEmpty = player getVariable "fuelEmpty";

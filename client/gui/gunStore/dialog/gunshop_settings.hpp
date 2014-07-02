@@ -14,10 +14,10 @@ class gunshopd {
 			idc = -1;
 			text = "client\ui\ui_background_controlers_ca.paa";
 
-			x = 0.1875 * safezoneW + safezoneX;
-			y = 0.15 * safezoneH + safezoneY;
-			w = 0.837499 * safezoneW;
-			h = 0.661111 * safezoneH;
+			x = 0.1875 * safeZoneW + safeZoneX;
+			y = 0.15 * safeZoneH + safeZoneY;
+			w = 0.837499 * safeZoneW;
+			h = 0.661111 * safeZoneH;
 		};
 		
 		class ItemSelectedPicture: w_RscPicture

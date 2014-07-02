@@ -1,3 +1,4 @@
+//  @file Name: resetPlayerTeam.sqf
 if (isServer) exitWith {};  
  
 private ["_playerName"];

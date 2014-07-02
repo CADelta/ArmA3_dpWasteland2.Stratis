@@ -1,5 +1,5 @@
 //	Name: JetCreation.sqf
-//	Author: AimZ =(dp)=, [CAD] Krycek
+//	Author: [CAD] Krycek
 
 if(!isDedicated) exitWith {};
 
@@ -41,14 +41,16 @@ if (_restrictContent) then
 
 	// Set Attributes
 	// set status of vehicle
-	_jet setFuel (0.30 + (random 0.40));
-	_jet setDamage (0.50 + (random 0.25));
+	_jet setFuel (0.75 + (random 0.25));
+	_jet setDamage (0.75 + (random 0.25));
 
 	if (count(configFile >> "CfgVehicles" >> (typeOf _jet) >> "Turrets") > 0) then
 	{
-		_jet setVehicleAmmo (0.50 + (random 0.50));
+		_jet setVehicleAmmo (0.75 + (random 0.25));
 	};
 };
+
+sleep 1;
 
 if (_wreck) then 
 {

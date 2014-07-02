@@ -54,5 +54,7 @@ if (_restrictContent) then
 	} foreach _ammotype;
 };
 
+sleep 1;
+
 _box
 //diag_log format["*** boxCreation Finished ***"];

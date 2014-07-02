@@ -70,8 +70,9 @@ class WastelandHud {
 			colorBackground[] = {0,0,0,0};
 			colorText[] = {1,1,1,1};
 			shadow = 2;
-			text = "<t color='#17AA41' shadow='2' size='1.0'>CADeltas =(dp)= Wasteland - http://dp-clan.enjin.com</t>";
-			class Attributes {
+			text = "<t color='#91aa87' shadow='2' size='1.0'>dp Wasteland 2.5 - dp-clan.enjin.com</t>";
+			class Attributes
+			{
 				align = "right";
 			};
 		};
@@ -81,8 +82,8 @@ class WastelandHud {
 			type = CT_STRUCTURED_TEXT;
 			size = 0.040;
 			x = safeZoneX;
-            y = safeZoneY + (safeZoneH * (1 - (0.20 / SafeZoneH)));
-			w = 0.24; 
+            y = safeZoneY + (safeZoneH * (1 - (0.23 / SafeZoneH)));		// 0.20
+			w = 0.30;		// 0.24
 			h = 0.30;
 			lineSpacing = 6;
 			colorBackground[] = {0,0,0,0};

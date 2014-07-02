@@ -1,8 +1,5 @@
-//	@file Version: 1.0
 //	@file Name: loadRespawnDialog.sqf
-//	@file Author: [404] Deadbeat, [404] Costlyy, AimZ =(dp)=
-//	@file Created: 20/11/2012 05:19
-//	@file Args:
+//	@file Author: [404] Deadbeat, [404] Costlyy, AimZ =(dp)=, [CAD] Krycek
 
 #define respawn_Content_Text 3401
 #define respawn_MissionUptime_Text 3402
@@ -42,7 +39,8 @@ _dynamicControlsArray = [
     [respawn_Town_Button1,respawn_PlayersInTown_Text1],
     [respawn_Town_Button2,respawn_PlayersInTown_Text2],
     [respawn_Town_Button3,respawn_PlayersInTown_Text3],
-    [respawn_Town_Button4,respawn_PlayersInTown_Text4]];
+    [respawn_Town_Button4,respawn_PlayersInTown_Text4]
+];
 
 {
     _button = _display displayCtrl (_x select 0);

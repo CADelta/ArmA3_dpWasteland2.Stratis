@@ -45,7 +45,7 @@ wreckRemovalMinTime = 600; 	// seconds
 
 //respawnDialog = 0;
 //respawnTemplates[] = {Counter};
-//respawnOnStart = 0;
+//respawnOnStart = 1;
 aiKills = 1;
 disabledAI = 1;
 joinUnassigned = 0; 	// 0 = Auto-assigns

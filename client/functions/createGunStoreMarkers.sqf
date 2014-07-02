@@ -1,8 +1,5 @@
-//	@file Version: 1.0
 //	@file Name: createGunStoreMarkers.sqf
-//	@file Author: [404] Deadbeat, [404] Costlyy
-//	@file Created: 28/11/2012 05:19
-//	@file Args:
+//	@file Author: [404] Deadbeat, [404] Costlyy, [CAD] Krycek
 
 _gunStores = ["gunStore1","gunStore2","gunStore3","gunStore4"];
 

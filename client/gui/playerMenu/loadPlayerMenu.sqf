@@ -1,3 +1,4 @@
+//  @file Name: loadPlayerMenu.sqf
 #include "dialog\player_sys.sqf"; 
 
 if(isnil {player getVariable "cmoney"}) then {player setVariable["cmoney",0,true];};
@@ -44,16 +45,9 @@ if(!dialog) then
 		_itemListIndex = _itemList lbAdd "Empty Fuel Can";
 		_itemList lbSetData [(lbSize _itemList)-1, "fuelEmpty"];
 	};
-	if(player getVariable "camonet" > 0) then {
-		if(player getVariable "camonet" > 1) then {
-			_str = format ["%1x - Slum Canvas (Black)", player getVariable "camonet"];
-		} else {
-			_str = "Slum Canvas (Black)";
-		};
-		_itemListIndex = _itemList lbAdd format["%1x - Slum Canvas (Black)", player getVariable "camonet"];
-		_itemList lbSetData [(lbSize _itemList)-1, "camonet"];
-	};
-	if(player getVariable "repairkits" > 0) then {
+
+	if(player getVariable "repairkits" > 0) then
+	{
 		_str = "Repair Kit";
 		
 		if(player getVariable "repairkits" > 1) then 
@@ -75,15 +69,11 @@ if(!dialog) then
 			_str = "Medical kit";
 		};
 		_itemListIndex = _itemList lbAdd _str;
-		_itemList lbSetData [(lbSize _itemList)-1, "medkit"];
+		_itemList lbSetData [(lbSize _itemList)-1, "medkits"];
 	};
 
-	if(player getVariable "spawnBeacon" > 0) then {
-		_itemListIndex = _itemList lbAdd "Spawn Beacon";
-		_itemList lbSetData [(lbSize _itemList)-1, "spawnBeacon"];
-	};
+	_nearestPlayers = nearestobjects [player, ["SoldierWB","SoldierEB","SoldierGB"],  5];
 
-	_nearestPlayers = nearestobjects [player, ["B_Soldier_F","B_soldier_M_F","B_medic_F","B_soldier_repair_F","O_Soldier_F","O_soldier_M_F","O_medic_F","O_soldier_repair_F","I_Soldier_F","I_soldier_M_F","I_medic_F","I_soldier_repair_F"],  5];
 	{
 		if (player distance _x < 5 && alive _x && player != _x) then
 		{

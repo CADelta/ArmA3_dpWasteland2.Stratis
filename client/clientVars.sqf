@@ -143,6 +143,7 @@ ammoArray = [
 	["Titan_AP","Titan AP Missile",125,25],
 	["Titan_AT","Titan AT Missile",150,50],
 
+	//Hand Grenades
 	["HandGrenade_Stone","Grenade Decoy",20,10],
 	["MiniGrenade","Mini Grenade",50,25],
 	["HandGrenade","RGO Frag Grenade",100,50],
@@ -159,6 +160,7 @@ ammoArray = [
 	["DemoCharge_Remote_Mag","Explosive Charge",150,50],
 	["SatchelCharge_Remote_Mag","Explosive Satchel",250,100],
 
+	//Under-slung Grenade Launcher Ammunition
 	["1Rnd_HE_Grenade_shell","40mm HE Grenade Round",50,10],
 	["3Rnd_HE_Grenade_shell","40mm 3Rnd HE Grenade",150,25],
 	["1Rnd_Smoke_Grenade_shell","Smoke Round (White)",25,5],
@@ -176,6 +178,11 @@ ammoArray = [
 	["1Rnd_SmokeOrange_Grenade_shell","Smoke Round (Orange)",25,5],
 	["3Rnd_SmokeOrange_Grenade_shell","3Rnd 3GL Smoke Rounds (Orange)",75,15],
 
+	//IR - Hand Grenades
+	["B_IR_Grenade","IR Grenade [NATO]", 25,10],
+	["O_IR_Grenade","IR Grenade [CSAT]", 25,10],
+	["I_IR_Grenade","IR Grenade [AAF]", 25,10],
+	//Smoke - Hand Grenades
 	["SmokeShell","Smoke Grenade (White)", 15,2],
 	["SmokeShellRed","Smoke Grenade (Red)", 15,2],
 	["SmokeShellGreen","Smoke Grenade (Green)", 15,2],
@@ -184,6 +191,7 @@ ammoArray = [
 	["SmokeShellBlue","Smoke Grenade (Blue)", 15,2],
 	["SmokeShellOrange","Smoke Grenade (Orange)", 15,2],
 
+	//Flares
 	["UGL_FlareWhite_F","Flare Round (White)", 15,2],
 	["UGL_FlareGreen_F","Flare Round (Green)", 15,2],
 	["UGL_FlareRed_F","Flare Round (Red)", 15,2],
@@ -201,6 +209,7 @@ ammoArray = [
 	["FlareRed_F","Flare (Red)", 15,2],
 	["FlareYellow_F","Flare (Yellow)", 15,2],
 
+	//Chemlights
 	["Chemlight_green","Chemlight (Green)", 10,1],
 	["Chemlight_red","Chemlight (Red)", 10,1],
 	["Chemlight_yellow","Chemlight (Yellow)", 10,1],
@@ -572,7 +581,10 @@ generalStore = [
 	["Jerry Can (Empty)","fuelEmpty",localize "STR_WL_ShopDescriptions_fuelEmpty","client\ui\icons\jerrycan.paa",50,25]
 ];
 
-//Marker Name, Radius, City Name
+/***************************************************************************************************************************\
+*													City Marker Names														*
+*											Marker Name, Radius, City Name													*
+\***************************************************************************************************************************/
 cityList = [
 		["Town_1",180,"Air Station Mike 26"],
 		["Town_2",80,"Agios loannis"],

@@ -9,7 +9,7 @@ disableSerialization;
 private["_data","_corpse","_ctemp","_ptemp"];
 _data = GET_SELECTED_DATA(loot_item_list);
 
-_corpse = nearestobjects [player, ["B_Soldier_F","B_soldier_M_F","B_medic_F","B_soldier_repair_F","O_Soldier_F","O_soldier_M_F","O_medic_F","O_soldier_repair_F","I_Soldier_F","I_soldier_M_F","I_medic_F","I_soldier_repair_F"],  5] select 1; 
+_corpse = nearestobjects [player, ["SoldierWB","SoldierEB","SoldierGB"], 5] select 1;
 
 if (player distance _corpse < 5 && !alive _corpse) then
 {
@@ -64,7 +64,7 @@ if (player distance _corpse < 5 && !alive _corpse) then
 				player setVariable["water",_ptemp+1,true]; 
 			};
 		};
-		case "medkit": {
+		case "medkits": {
 			_ctemp = _corpse getVariable ["medkits",0]; 
 			_ptemp = player getVariable ["medkits",0]; 
 			if (_ctemp > 0) then
@@ -73,12 +73,6 @@ if (player distance _corpse < 5 && !alive _corpse) then
 				player setVariable["medkits",_ptemp+1,true]; 
 			};
 		};
-		case "spawnBeacon": {
-			player setVariable["spawnBeacon", (player getVariable "spawnBeacon")-1,true];
-			_droppedBeacon = "Satelit" createVehicle (position player);
-			_droppedBeacon setVariable["spawnsRemaining", 100, true];
-			_droppedBeacon setVariable["faction","WORLD",true];
-			_droppedBeacon setPos _pos;};
 	};
 
 	mutexScriptInProgress = false;

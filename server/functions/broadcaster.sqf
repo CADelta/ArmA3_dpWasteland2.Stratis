@@ -1,8 +1,5 @@
-//	@file Version: 1.0
 //	@file Name: broadcaster.sqf
-//	@file Author: [404] Deadbeat, AimZ =(dp)=
-//	@file Created: 20/11/2012 05:19
-//	@file Args:
+//	@file Author: [404] Deadbeat, AimZ =(dp)=, [CAD] Krycek
 
 if(!isDedicated) exitWith {};
 

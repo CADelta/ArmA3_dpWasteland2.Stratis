@@ -1,7 +1,5 @@
-//	@file Version: 1.0
 //	@file Name: spawnAction.sqf
-//	@file Author: [404] Deadbeat
-//	@file Created: 20/11/2012 05:19
+//	@file Author: [404] Deadbeat, [CAD] Krycek
 //	@file Args: [int(type of spawn)]
 
 diag_log format["*** spawnAction Started ***"];

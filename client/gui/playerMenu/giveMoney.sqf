@@ -1,3 +1,4 @@
+//	@file Name: giveMoney.sqf
 #include "dialog\player_sys.sqf";
 #define GET_DISPLAY (findDisplay playersys_DIALOG)
 #define GET_CTRL(a) (GET_DISPLAY displayCtrl ##a)
@@ -19,7 +20,7 @@ if((player getVariable "cmoney" < _money) OR (player getVariable "cmoney" < 0)) 
 mutexScriptInProgress = true;
 _currPlayerState = animationState player;
 
-_nearestPlayers = nearestobjects [player, ["B_Soldier_F","B_soldier_M_F","B_medic_F","B_soldier_repair_F","O_Soldier_F","O_soldier_M_F","O_medic_F","O_soldier_repair_F","I_Soldier_F","I_soldier_M_F","I_medic_F","I_soldier_repair_F"],  5];
+_nearestPlayers = nearestobjects [player, ["SoldierWB","SoldierEB","SoldierGB"], 5];
 {
 	if (player distance _x < 5 && alive _x && name _x == _otherPlayer) then
 	{

@@ -1,13 +1,11 @@
-//	@file Version: 1.0
-//	@file Name: repair.sqf
+//	@file Name: refuel.sqf
 //	@file Original Author: TAW_Tonic
 //  @file Author: [404] Costlyy
-//  @file Modified by: AimZ =(dp)=
-//	@file Created: 29/01/2013 00:00
-//	@file Args:
+//  @file Modified by: AimZ =(dp)=, [CAD] Krycek
 
 // Check if mutex lock is active.
-if(mutexScriptInProgress) exitWith {
+if(mutexScriptInProgress) exitWith
+{
 	player globalChat localize "STR_WL_Errors_InProgress";
 };
 
@@ -35,7 +33,8 @@ if((fuel _currVehicle) >= 0.99) exitWith {hint "Vehicle has full fuel tank, no p
 
 _fuelAmount = 0.25;
 
-switch true do {
+switch true do
+{
 	case (_currVehicle isKindOf "Air"): {_fuelAmount = 0.10;};
 	case (_currVehicle isKindOf "Tank"): {_fuelAmount = 0.10;};
 	case (_currVehicle isKindOf "Motorcycle"): {_fuelAmount = 0.75;};
@@ -49,10 +48,15 @@ player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 _totalDuration = 5; // 5 seconds duration
 _iterationAmount = _totalDuration;
 
-for "_iteration" from 1 to _iterationAmount do {
+for "_iteration" from 1 to _iterationAmount do
+{
+	player setVariable["fuelFull",0,true];
+	player setVariable["fuelEmpty",1,true];
 
     if(vehicle player != player) exitWith { // Player is in a vehicle
 		2 cutText ["Vehicle refuel interrupted...", "PLAIN DOWN", 1];
+		player setVariable["fuelEmpty",0,true];
+		player setVariable["fuelFull",1,true];
 	};
 
   	if (doCancelAction) exitWith {// Player selected "cancel action".
@@ -60,14 +64,20 @@ for "_iteration" from 1 to _iterationAmount do {
    		player playMoveNow _currPlayerState;
         doCancelAction = false;
         mutexScriptInProgress = false; // Do this here to remove "Cancel Action" ASAP!
+		player setVariable["fuelEmpty",0,true];
+		player setVariable["fuelFull",1,true];
 	};
 
 	if (!(alive player)) exitWith {// If the player dies, revert state.
 		2 cutText ["Vehicle refuel interrupted...", "PLAIN DOWN", 1];
+		player setVariable["fuelEmpty",0,true];
+		player setVariable["fuelFull",1,true];
 	};
 
 	if(player distance _currVehicle > 5) exitWith { // If the player leaves, revert state.
 		2 cutText ["Vehicle refuel interrupted...", "PLAIN DOWN", 1];
+		player setVariable["fuelEmpty",0,true];
+		player setVariable["fuelFull",1,true];
 	};
 
   	if (animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then { // Keep the player locked in medic animation for the full duration of the loop.
@@ -80,18 +90,20 @@ for "_iteration" from 1 to _iterationAmount do {
 	2 cutText [format["Vehicle refuel %1%2 complete", _iterationPercentage, _stringEscapePercent], "PLAIN DOWN", 1];
 	sleep 1;
 
-  	if (_iteration >= _totalDuration) exitWith { // Success conditions
+  	if (_iteration >= _totalDuration) exitWith		// Success conditions
+   	{
    		sleep 1;
 		2 cutText ["", "PLAIN DOWN", 1];
     	player playMoveNow _currPlayerState;
 
-  		player setVariable["fuelFull",0,true];
-		player setVariable["fuelEmpty",1,true];
 
-        if(!(local _currVehicle)) then {
+        if(!(local _currVehicle)) then
+		{
 			refuelVehicle = [netId _currVehicle,_fuelAmount];
 			publicVariable "refuelVehicle";
-		} else {
+		}
+		else
+		{
 			_currVehicle setFuel ((fuel _currVehicle) + _fuelAmount);
 		};
    	};

@@ -1,3 +1,4 @@
+//  @file Name: loadLootPlayerMenu.sqf
 #include "dialog\player_sys.sqf"; 
 
 disableSerialization;
@@ -6,7 +7,7 @@ private["_playerDialog","_Dialog","_foodtext","_watertext","_moneytext","_uptime
 _playerDialog = createDialog "lootPlayerMenu";
 
 waituntil {dialog};
-_corpse = (nearestobjects [player, ["B_Soldier_F","B_soldier_M_F","B_medic_F","B_soldier_repair_F","O_Soldier_F","O_soldier_M_F","O_medic_F","O_soldier_repair_F","I_Soldier_F","I_soldier_M_F","I_medic_F","I_soldier_repair_F"],  5] select 1);
+_corpse = (nearestobjects [player, ["SoldierWB","SoldierEB","SoldierGB"], 5] select 1);
 
 _currPlayerState = animationState player;
 player playMoveNow "AinvPknlMstpSnonWnonDnon_Putdown_AinvPknlMstpSnonWnonDnon";
@@ -44,16 +45,9 @@ while {dialog} do
 			_itemListIndex = _itemList lbAdd "Empty Fuel Can";
 			_itemList lbSetData [(lbSize _itemList)-1, "fuelEmpty"];
 		};
-		if(_corpse getVariable "camonet" > 0) then {
-			if(_corpse getVariable "camonet" > 1) then {
-				_str = format ["%1x - Slum Canvas (Black)", _corpse getVariable "camonet"];
-			} else {
-				_str = "Slum Canvas (Black)";
-			};
-			_itemListIndex = _itemList lbAdd format["%1x - Slum Canvas (Black)", _corpse getVariable "camonet"];
-			_itemList lbSetData [(lbSize _itemList)-1, "camonet"];
-		};
-		if(_corpse getVariable "repairkits" > 0) then {
+
+		if(_corpse getVariable "repairkits" > 0) then
+		{
 			_str = "Repair Kit";
 			
 			if(_corpse getVariable "repairkits" > 1) then 
@@ -78,10 +72,6 @@ while {dialog} do
 			_itemList lbSetData [(lbSize _itemList)-1, "medkit"];
 		};
 
-		if(_corpse getVariable "spawnBeacon" > 0) then {
-			_itemListIndex = _itemList lbAdd "Spawn Beacon";
-			_itemList lbSetData [(lbSize _itemList)-1, "spawnBeacon"];
-		};
 	}
 	else 
 	{

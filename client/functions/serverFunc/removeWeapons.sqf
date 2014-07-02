@@ -1,3 +1,4 @@
+//  @file Name: removeWeapons.sqf
 if (isServer) exitWith {};  
  
 private ["_playerName"];

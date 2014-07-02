@@ -1,9 +1,7 @@
 
-//	@file Version: 1.0
 //	@file Name: buyGuns.sqf
-//	@file Author: [404] Deadbeat, [404] Costlyy
-//	@file Created: 20/11/2012 05:13
-//	@file Args: [int (0 = buy to player 1 = buy to crate)]
+//	@file Author: [404] Deadbeat, [404] Costlyy, [CAD] Krycek
+//	@file Args: [int (0 = buy to player 1 = buy to crate)]		<--- Not used anymore, since buy to crate is no longer an option!
 
 #include "dialog\gunstoreDefines.sqf";
 disableSerialization;
@@ -134,7 +132,7 @@ switch(_switch) do
 					{
 						{if(_x select 0 == _class) then{_price = _x select 2; _name = _x select 1;};}forEach accessoriesArray;
 						gunStoreCart = gunStoreCart - _price;
-						hint format["You do not have space for this item %1",_name];  
+				hint format ["You do not have space for this item: %1",_name];
 						sleep 0.5;
 					};
 				};

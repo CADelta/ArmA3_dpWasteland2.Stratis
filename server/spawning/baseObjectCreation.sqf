@@ -24,6 +24,7 @@ _obj addEventHandler ["HandleDamage", {false}];
 // Set Attributes
 _obj setVariable["R3F_LOG_disabled",false];
 
+sleep 0.1;
 _obj
 
 //diag_log format["*** baseObjectCreation Finished ***"];

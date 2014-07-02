@@ -1,9 +1,5 @@
-//	@file Version: 1.0
 //	@file Name: playerSetup.sqf
 //	@file Author: [404] Deadbeat, [CAD] Krycek
-//	@file Created: 20/11/2012 05:19
-//  "file Edited: 13/11/2013
-//	@file Args:
 
 if (isServer) exitWith {};
 
@@ -87,7 +83,7 @@ player addMagazine "16Rnd_9x21_Mag";
 player addWeapon "hgun_P07_F";
 player selectWeapon "hgun_P07_F";
 
-player switchMove "aidlpercmstpsraswrfldnon_idlesteady01n";
-player playMove "aidlpercmstpsraswrfldnon_idlesteady01n";
+player switchMove "AmovPknlMstpSrasWpstDnon";
+player playMove "PistolMagazineReloadKneel";
 
 diag_log format["*** playerSetup Finished ***"];

@@ -1,5 +1,5 @@
 //	Name: survivalObjectCreation.sqf
-//	Author: AimZ =(dp)=
+//	Author: AimZ =(dp)=, [CAD] Krycek
 
 if(!isDedicated) exitWith {};
 
@@ -38,6 +38,7 @@ if(_objtype == "Land_Sacks_goods_F") then
     _obj setVariable["food",20,true];
 };
 
+sleep 1;
 _obj setVariable["R3F_LOG_disabled",false];
 
 //diag_log format["*** survivalObjectCreation Finished ***"];

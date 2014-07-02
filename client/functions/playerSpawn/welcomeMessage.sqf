@@ -1,3 +1,4 @@
+//  @file Name: welcomeMessage.sqf
 #define welcomeText 3200
 
 10 cutrsc["WelcomeMessage", "PLAIN"];

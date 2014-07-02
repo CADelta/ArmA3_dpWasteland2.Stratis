@@ -1,5 +1,7 @@
+//  @file Name: SyphonFuelTank.sqf
+//  @file Author: AimZ =(dp)=, [CAD] Krycek
 
-_vehicle = nearestobjects [player, ["Car", "Helicopter", "Tank"], 4];
+_vehicle = nearestobjects [player, ["Car", "Helicopter", "Tank", "Ship"], 4];
 if (count _vehicle > 0) then
 {
 	_vehicle = _vehicle select 0;
@@ -10,13 +12,13 @@ _fuelAmount = 0.25;
 switch true do {
 	case (_vehicle isKindOf "Air"): {_fuelAmount = 0.10;};
 	case (_vehicle isKindOf "Tank"): {_fuelAmount = 0.10;};
-//	case (_vehicle isKindOf "Motorcycle"): {_fuelAmount = 0.75;};		// CAD - This must be from ArmA 2?
+	case (_vehicle isKindOf "Ship"): {_fuelAmount = 0.10;};
 	case (_vehicle isKindOf "ATV_Base_EP1"): {_fuelAmount = 0.75;};
 };
 
-if (fuel _vehicle > 0) then
+if (fuel _vehicle > 0.10) then
 {
-	if (player distance _vehicle < 6) then		// Org. = 4
+	if (player distance _vehicle < 4) then
 	{
         if(!(local _vehicle)) then
 		{
@@ -36,10 +38,17 @@ if (fuel _vehicle > 0) then
 	}
 	else
 	{
-		hint "Vehicle to far away";
+		hint "Move closer to the vehicle!";
 	};
 }
 else
 {
-	hint "No fuel in vehicle";
+	if (fuel _vehicle > 0) then
+	{
+		hint "Cannot syphon! Fuel is too low...";
+	}
+	else
+	{
+		hint "Cannot syphon! - Vehicle has no fuel left";
+	};
 };

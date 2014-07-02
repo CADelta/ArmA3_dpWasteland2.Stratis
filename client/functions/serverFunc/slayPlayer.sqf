@@ -1,3 +1,4 @@
+//  @file Name: slayPlayer.sqf
 if (isServer) exitWith {};  
  
 private ["_playerName"];

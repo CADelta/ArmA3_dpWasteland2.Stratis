@@ -1,3 +1,5 @@
+//  @file Name: initPlayer.sqf
+//  @file Author: [CAD] Krycek
 
 diag_log format["*** initialisePlayer Started ***"];
 

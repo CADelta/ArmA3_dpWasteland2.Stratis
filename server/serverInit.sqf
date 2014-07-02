@@ -1,3 +1,5 @@
+//  @file Name: serverInit.sqf
+//  @file Author: [CAD] Krycek
 
 if(!isDedicated) exitWith {};
 

@@ -15,7 +15,7 @@ playerUID = getPlayerUID(player);
 doKickTeamKiller = false;
 {
 	if(_x select 0 == playerUID) then {
-        
+
 		if((_x select 1) >= 2) then {
 			if(playerSide in [west, east]) then {
 				doKickTeamKiller = true;
@@ -29,10 +29,10 @@ doKickTeamSwitcher = false;
 {
 	if(_x select 0 == playerUID) then
     {
-        if(playerSide != (_x select 1) && str(playerSide) != "GUER") then{
+        if(playerSide != (_x select 1) && str(playerSide) != "GUER") then {
         	doKickTeamSwitcher = true;
 			_side = str(_x select 1);
-        };	
+        };
 	};
 } forEach pvar_teamSwitchList;
 

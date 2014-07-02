@@ -1,8 +1,5 @@
-//	@file Version: 1.0
-//	@file Name: objectsSpawning.sqf
-//	@file Author: [404] Deadbeat, [404] Costlyy, AimZ =(dp)=
-//	@file Created: 20/11/2012 05:19
-//	@file Args:
+//	@file Name: survivalObjectSpawning.sqf
+//	@file Author: [404] Deadbeat, [404] Costlyy, AimZ =(dp)=, [CAD] Krycek
 
 if(!isDedicated) exitWith {};
 

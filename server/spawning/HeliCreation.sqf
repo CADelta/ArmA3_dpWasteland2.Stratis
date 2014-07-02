@@ -56,5 +56,6 @@ if (_wreck) then
 	_heli setVariable ["status", "unknown", true];
 };
 
+sleep 1;
 _heli
 //diag_log format["*** heliCreation finished ***"];

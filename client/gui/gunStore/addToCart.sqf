@@ -1,9 +1,6 @@
 
-//	@file Version: 1.0
 //	@file Name: addToCart.sqf
-//	@file Author: [404] Deadbeat
-//	@file Created: 20/11/2012 05:13
-//	@file Args:
+//	@file Author: [404] Deadbeat, [CAD] Krycek
 
 #include "dialog\gunstoreDefines.sqf";
 disableSerialization;

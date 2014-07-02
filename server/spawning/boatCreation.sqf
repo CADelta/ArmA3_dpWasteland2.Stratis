@@ -5,7 +5,7 @@
 
 if(!isDedicated) exitWith {};
 
-//diag_log format["*** vehicleCreation Started ***"];
+//diag_log format["*** boatCreation Started ***"];
 
 private ["_boattype","_boat","_type","_position"];
 _position = _this select 0;
@@ -54,7 +54,7 @@ if (_restrictContent) then
 
 _boat
 
-//diag_log format["*** vehicleCreation Finished ***"];
+//diag_log format["*** boatCreation Finished ***"];
 
 
 /****** BIS_fnc_findSafePos Description: ********

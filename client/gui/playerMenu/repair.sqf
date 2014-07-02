@@ -1,10 +1,7 @@
-//	@file Version: 1.0
 //	@file Name: repair.sqf
 //	@file Original Author: TAW_Tonic
 //  @file Author: [404] Costlyy
 //  @file Modified by: AimZ =(dp)=
-//	@file Created: 29/01/2013 00:00
-//	@file Args: 
 
 // Check if mutex lock is active.
 if(mutexScriptInProgress) exitWith {

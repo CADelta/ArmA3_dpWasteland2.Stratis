@@ -1,9 +1,6 @@
 
-//	@file Version: 1.0
 //	@file Name: populateGunStore.sqf
-//	@file Author: [404] Deadbeat, AimZ =(dp)=
-//	@file Created: 20/11/2012 05:13
-//	@file Args: [int (0 = populate list with guns 1 = populate list with ammo 2 = populate list with equipment)]
+//	@file Author: [404] Deadbeat, AimZ =(dp)=, [CAD] Krycek
 
 #include "dialog\gunstoreDefines.sqf";
 disableSerialization;

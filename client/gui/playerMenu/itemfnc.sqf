@@ -1,9 +1,7 @@
 
-//	@file Version: 1.0
 //	@file Name: itemfnc.sqf
 //	@file Original Author: TAW_Tonic
 //  @file Author: [404] Costlyy, [404] Deadbeat
-//	@file Created: 01/01/1970 00:00
 //	@file Args: [int (0 = use | 1 = drop)]
 
 #include "dialog\player_sys.sqf";
@@ -46,7 +44,7 @@ switch(_switch) do
 
 			case "fuelEmpty": 
 			{
-				hint "You can refuel Fuel Can at gas station through action menu";
+				hint "You can refill your Jerry can at the nearest gas station or syphon from another vehicle.";
 			};
 
 			case "repairkits": 
@@ -116,7 +114,7 @@ switch(_switch) do
                 player playMoveNow _currState;
                 doCancelAction = false;    
 			};
-			case "medkit": 
+			case "medkits":
 			{
 				if((damage player) < 0.25) exitwith {
 
@@ -155,21 +153,6 @@ switch(_switch) do
                 player playMoveNow _currState;
                 doCancelAction = false;    
 			};
-			case "camonet": 
-			{
-				_playerPos = getPosATL player;
-				player setVariable["camonet",(player getVariable "camonet")-1,true];
-				_dir = getdir player;
-				_deployedCamoNet = "Land_cargo_addon02_V2_F" createVehicle (position player); 
-				_deployedCamoNet setVariable["newVehicle",vChecksum,true];
-				_deployedCamoNet setPos _playerPos;
-				_deployedCamoNet setDir _dir;
-				hint "Slum canvas deployed";
-			};            
-            case "spawnBeacon": 
-            {
-            	[] call placeSpawnBeacon;
-            };
 		};
 		
 		mutexScriptInProgress = false;
@@ -196,7 +179,7 @@ switch(_switch) do
         closeDialog 0; // To fix the listbox not updating properly.
         mutexScriptInProgress = true;
 
-		_nearestPlayers = nearestobjects [player, ["B_Soldier_F","B_soldier_M_F","B_medic_F","B_soldier_repair_F","O_Soldier_F","O_soldier_M_F","O_medic_F","O_soldier_repair_F","I_Soldier_F","I_soldier_M_F","I_medic_F","I_soldier_repair_F"],  5];
+		_nearestPlayers = nearestobjects [player, ["SoldierWB","SoldierEB","SoldierGB"], 5];
 		{
 			if (player distance _x < 5 && alive _x && name _x == _otherPlayer) then
 			{
@@ -211,8 +194,7 @@ switch(_switch) do
 					case "fuelEmpty": {player setVariable["fuelEmpty",(player getVariable "fuelEmpty")-1,true];_x setVariable["fuelEmpty",(_x getVariable "fuelEmpty")+1,true];};
 					case "repairkits": {player setVariable["repairkits",(player getVariable "repairkits")-1,true];_x setVariable["repairkits",(_x getVariable "repairkits")+1,true];};
 					case "water": {player setVariable["water",(player getVariable "water")-1,true];_x setVariable["water",(_x getVariable "water")+1,true];};
-					case "medkit": {player setVariable["medkits",(player getVariable "medkits")-1,true];_x setVariable["medkits",(_x getVariable "medkits")+1,true];};
-					case "spawnBeacon": {player setVariable["spawnBeacon",(player getVariable "spawnBeacon")-1,true];_x setVariable["spawnBeacon",(_x getVariable "spawnBeacon")+1,true];};
+					case "medkits": {player setVariable["medkits",(player getVariable "medkits")-1,true];_x setVariable["medkits",(_x getVariable "medkits")+1,true];};
 				};
 
 				sleep 5;

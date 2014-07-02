@@ -1,3 +1,5 @@
+//	@file Name: createConstructionStoreMarkers.sqf
+//	@file Author: [404] Deadbeat, [404] Costlyy, AimZ =(dp)=, [CAD] Krycek
 
 _constructionStores = ["constructionStore1","constructionStore2","constructionStore3","constructionStore4"];
 

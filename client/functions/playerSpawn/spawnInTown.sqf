@@ -1,7 +1,5 @@
-//	@file Version: 1.0
 //	@file Name: spawnInTown.sqf
-//	@file Author: [404] Deadbeat, [404] Costlyy
-//	@file Created: 20/11/2012 05:19
+//	@file Author: [404] Deadbeat, [404] Costlyy, [CAD] Krycek
 //	@file Args: [int(which button)]
 
 #define respawn_Town_Button0 3403
@@ -113,9 +111,9 @@ switch(_switch) do
 		}forEach cityList;
     };
 };
-sleep 5;
+sleep 1;
 _mins = floor(60 * (daytime - floor(daytime)));
-["=(dp)= Wasteland",_townName,format ["%1:%3%2", floor(daytime), _mins, if(_mins < 10) then {"0"} else {""}]] spawn BIS_fnc_infoText;
+["dp Wasteland",_townName,format ["%1:%3%2", floor(daytime), _mins, if(_mins < 10) then {"0"} else {""}]] spawn BIS_fnc_infoText;
 
 
 diag_log format["*** spawnInTown Finished ***"];

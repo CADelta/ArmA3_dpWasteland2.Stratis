@@ -1,3 +1,5 @@
+//  @file Name: controlStoreGuy.sqf
+//  @file Author: [CAD] Krycek
 if(!isDedicated) exitWith {};
 
 private ["_guy","_location","_position"];

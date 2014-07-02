@@ -1,3 +1,5 @@
+//  @file Name: useScanner.sqf
+//  @file Author: AimZ =(dp)=, [CAD] Krycek
 ScannerProgress = 30;
 if (scannerBattery > ScannerProgress) then 
 {
