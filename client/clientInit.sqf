@@ -90,8 +90,8 @@ sleep 2;
 
 // Player setup
 //sleep 2;
-[] call PlayerSetup;
-[] spawn createMenuActions;
+/*[] call PlayerSetup;*/
+/*[] spawn createMenuActions;*/
 [] spawn initSurvival;
 [] call createKeyboardEvent;
 
@@ -102,12 +102,13 @@ sleep 2;
 [] spawn getPlayerData;
 [] spawn getDebugData;
 
-[] spawn cleanLocalObjects;		// CAD - TEST
+[] spawn cleanLocalObjects;
 
 isStandRunning = false;
 isKneelRunning = false;
 isStandSprinting = false;
 isKneelSprinting = false;
+
 player addEventHandler ["AnimStateChanged","
 	_str_sprint1 = toArray 'amovpercmeva';
 	_str_sprint2 = toArray 'amovpknlmeva';
