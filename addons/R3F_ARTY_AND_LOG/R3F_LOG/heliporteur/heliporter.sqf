@@ -21,11 +21,10 @@ else
 {
 	R3F_LOG_mutex_local_verrou = true;
 	
-	private ["_heliporteur", "_objet"];
+	private ["_heliporteur", "_objet","_heavyTransportHelis"];
 	_heliporteur = _this select 0;
 	_objet = nearestObjects [_heliporteur, R3F_LOG_CFG_objets_heliportables, 20];
 
-	// Parce que l'héliporteur peut être un objet héliportable
 	// Because Helicarrier can be a heliportable object
 	_objet = _objet - [_heliporteur];
 		
@@ -39,12 +38,10 @@ else
 			{
 				if (count crew _objet == 0) then
 				{
-					// Si l'objet n'est pas en train d'être déplacé par un joueur
 					// If the object is not being moved by a player
 					if (isNull (_objet getVariable "R3F_LOG_est_deplace_par") || (!alive (_objet getVariable "R3F_LOG_est_deplace_par"))) then
 					{
 						private ["_ne_remorque_pas", "_remorque"];
-						// Ne pas héliporter quelque chose qui remorque autre chose
 						// Not transported by helicopter which tows something else
 						_ne_remorque_pas = true;
 						_remorque = _objet getVariable "R3F_LOG_remorque";
@@ -80,7 +77,7 @@ else
 									_heliporteur setVariable ["R3F_LOG_heliporte", objNull, true];
 									_objet setVariable ["R3F_LOG_est_transporte_par", objNull, true];
 									detach _objet;
-									_objet setPos [getPos _objet select 0, getPos _objet select 1, 0];
+									_objet setPosATL [getPos _objet select 0, getPos _objet select 1, 0];
 									_objet setVelocity [0, 0, 0];
 									R3F_LOG_mutex_local_verrou = false;
 								};
@@ -90,33 +87,33 @@ else
 								if !(typeOf _objet == "Land_Cargo_Tower_V1_F") then
 								{
 									_objet attachTo [_heliporteur, [0, 0, (boundingBoxReal _heliporteur select 0 select 2) - (boundingBoxReal _objet select 0 select 2) - (getPosATL _heliporteur select 2) + 0.5]];
-									player globalChat format [STR_R3F_LOG_action_heliporter_fait, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];
+									player globalChat format [STR_R3F_LOG_action_heliporter_fait, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];		//"Object ""%1"" attached."
 								}
 								else
 								{
 									_objet attachTo [_heliporteur, [0, 0, (boundingBoxReal _heliporteur select 0 select 2) - (boundingBoxReal _objet select 0 select 2) - (getPosATL _heliporteur select 2) - 5]];
-									player globalChat format [STR_R3F_LOG_action_heliporter_fait, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];
+									player globalChat format [STR_R3F_LOG_action_heliporter_fait, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];		//"Object ""%1"" attached."
 								};
 							};
 						}
 						else
 						{
-							player globalChat format [STR_R3F_LOG_action_heliporter_objet_remorque, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];
+							player globalChat format [STR_R3F_LOG_action_heliporter_objet_remorque, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];		//"Can't lift the object ""%1"" because it's towing another object."
 						};
 					}
 					else
 					{
-						player globalChat format [STR_R3F_LOG_action_heliporter_deplace_par_joueur, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];
+						player globalChat format [STR_R3F_LOG_action_heliporter_deplace_par_joueur, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];		//"The object ""%1"" is being moved by a player."
 					};
 				}
 				else
 				{
-					player globalChat format [STR_R3F_LOG_action_heliporter_joueur_dans_objet, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];
+					player globalChat format [STR_R3F_LOG_action_heliporter_joueur_dans_objet, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];		//"There is a player in the object ""%1""."
 				};
 			}
 			else
 			{
-				player globalChat format [STR_R3F_LOG_action_heliporter_deja_transporte, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];
+				player globalChat format [STR_R3F_LOG_action_heliporter_deja_transporte, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];		//"The object ""%1"" is already transported by a vehicle."
 			};
 		};
 	};
